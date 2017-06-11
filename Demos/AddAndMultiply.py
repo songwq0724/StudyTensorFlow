@@ -10,3 +10,10 @@ e = tf.add(c,d,name="add")
 #run the graph
 sess = tf.Session()
 print(sess.run(e))
+
+# save the data graph, and then display the graph by TensorBoard
+# the command is : tensorboard --logdir="my_graph"
+writer = tf.summary.FileWriter('./my_graph',sess.graph)
+
+writer.close()
+sess.close()
